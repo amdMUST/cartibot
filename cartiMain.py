@@ -16,7 +16,7 @@ api = tp.API(auth)
 
 
 # new picture in imgs folder
-os.chdir('cartiPics')
-for model_image in os.listdir('.'):
-    api.update_with_media(model_image)
-    time.sleep(30000000)
+# os.chdir('cartiPics')
+# for model_image in os.listdir('.'):
+#    api.update_with_media(model_image)
+#    time.sleep(3)

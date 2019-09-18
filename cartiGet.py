@@ -22,14 +22,14 @@ os.chdir('cartiPics')
 count = 0
 
 # write the images
-for image in image_tags:
-    try:
-        url = image['src']
-        source = requests.get(url)
-        if source.status_code == 200:
-            with open('cartiPics-'+ str(count)+'.jpg','wb') as f:
-                f.write(requests.get(url).content)
-                f.close()
-                count +=1
-    except:
-        pass
+# for image in image_tags:
+ #   try:
+  #      url = image['src']
+   #     source = requests.get(url)
+    #    if source.status_code == 200:
+    #        with open('cartiPics-'+ str(count)+'.jpg','wb') as f:
+     #           f.write(requests.get(url).content)
+    #            f.close()
+    #            count +=1
+ #   except:
+ #       pass
