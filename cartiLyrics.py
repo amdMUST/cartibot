@@ -1,1 +1,0 @@
-# to get the carti lyrics from genuis and store in a text file
