@@ -1,5 +1,5 @@
 # parsing carti lyrics from a file
-# 2 77 109 172 
+# 2 77 109 172 198 248 
 import os
 import time
 import random2
