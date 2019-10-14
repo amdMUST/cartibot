@@ -2,8 +2,6 @@
 import tweepy as tp # to use the twitter API
 import time # to specify how much time in between tweets
 import os # to move to the cartiPics folder
-#from cartiGetLyric import sizeOfFile, getLyric
-#from cartiReply import replyToTweets
 
 # creds to login to api
 consumerKey = 'NdFFEbjRY3P1V0mgNz3rAzTHN'
