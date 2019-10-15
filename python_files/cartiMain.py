@@ -14,13 +14,6 @@ auth = tp.OAuthHandler(consumerKey,consumerSec)
 auth.set_access_token(accessTok,accessSec)
 api = tp.API(auth)
 
-
-# new picture in imgs folder
-# os.chdir('cartiPics')
-# for model_image in os.listdir('.'):
-#    api.update_with_media(model_image)
-#    time.sleep(3)
-
 # this will be the head place where we start call all the methods to run
 
 #while True:

@@ -3,6 +3,8 @@ import time
 import random2
 import tweepy as tp
 from cartiMain import api
+#from replyToCarti import replyToCarti
+#from replytoCartiKeyword import replyToPeopleWhoTweetCarti
 
 #overriding tweepy.StreamListener to add logic to on_status
 class MyStreamListener(tp.StreamListener):
@@ -19,8 +21,8 @@ class MyStreamListener(tp.StreamListener):
 myStreamListener = MyStreamListener()
 myStream = tp.Stream(auth = api.auth, listener = myStreamListener)
 
-#myStream.filter(track=['carti'], is_async=True)
-replyToPWTACarti()
+myStream.filter(track=['carti'], is_async=True)
+#replyToPeopleWhoTweetCarti()
 
 myStream.filter(follow=["101263750"])
-replyToCarti()
+#replyToCarti()
