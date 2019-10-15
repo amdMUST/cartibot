@@ -3,10 +3,33 @@
 import os
 import time
 import random2
+import tweepy as tp
+from cartiMain import api
+
+
+def turnOnTweetLyric(timer):
+	print('turned on, gonna tweet lyric soon!')
+	fileSize = sizeOfFile()
+	x = random2.randint(0,fileSize)
+	while x < fileSize:
+		x = random2.randint(0,fileSize)
+		print('tick')
+		cartiTweetStatus( getLyric(x,filepath) )
+		print('tweeted lyric!')
+
+		# 1 minute 60
+		# 30 minutes 1800
+		# 1 hour 3600
+		time.sleep(timer)
+		
+		if x >= fileSize:
+			x = 0
+			print('went past the total amount of lines, gonna reset to 0 !')
+			continue
 
 def sizeOfFile():
 # a method to find number of lines
-	filepath ="TEXT_files\TXT_cartiLyrics.txt"
+	filepath ="TEXT_files\\TXT_cartiLyrics.txt"
 	count = 1
 	with open(filepath, encoding="utf8") as f:
 		line = f.readline()		
@@ -14,7 +37,7 @@ def sizeOfFile():
 			count += 1
 	return count
 
-filepath ="TEXT_files\TXT_cartiLyrics.txt"
+filepath ="TEXT_files\\TXT_cartiLyrics.txt"
 def getLyric(count,filepath):
 	with open(filepath, encoding="utf8") as f:
 		line = f.readline(count).strip()
@@ -25,23 +48,5 @@ def getLyric(count,filepath):
 				print(line)
 				return line
 
-fileSize = sizeOfFile()
-x = 0
-while x < fileSize:
-	x += 1
-	print('tickCGL')
-	getLyric(x,filepath)
-
-	# 1 minute 60
-	time.sleep(6)
-
-	# 30 minutes 1800
-	#time.sleep(1800)
-
-	# 1 hour 3600
-	#time.sleep(3600)
-	
-	if x >= fileSize:
-		x = 0
-		# print('bro pls loop here like bro please loop here like please bro im begging u')
-		continue
+def cartiTweetStatus(x):
+	api.update_status( x.lower() )

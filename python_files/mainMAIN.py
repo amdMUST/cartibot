@@ -2,27 +2,20 @@ import os
 import time
 import random2
 import tweepy as tp
-from cartiMain import api
-#from replyToCarti import replyToCarti
-#from replytoCartiKeyword import replyToPeopleWhoTweetCarti
+from replyToCarti import turnOnReplyToCarti
+from cartiGetLyric import turnOnTweetLyric
+from cartiReply import turnOnReplyToTweets
+from replytoCartiKeyword import turnOnReplyKeywordCarti
 
-#overriding tweepy.StreamListener to add logic to on_status
-class MyStreamListener(tp.StreamListener):
 
-    def on_status(self, status):
-        print(status.text)
-    
-    def on_error(self, status_code):
-        if status_code == 420:
-            #returning False in on_data disconnects the stream
-            return False
-    
+# time conversions
+    # 1 minute 60
+	# 30 minutes 1800
+	# 1 hour 3600
 
-myStreamListener = MyStreamListener()
-myStream = tp.Stream(auth = api.auth, listener = myStreamListener)
-
-myStream.filter(track=['carti'], is_async=True)
-#replyToPeopleWhoTweetCarti()
-
-myStream.filter(follow=["101263750"])
-#replyToCarti()
+# this is the main true statement
+while True:
+    turnOnReplyToTweets(60) # this is going to respond to whenever someone tweets at cartibot, on a 15 sec timer rn
+    turnOnTweetLyric(60) # this is parsing carti lyrics from a file and tweeting them out every 30min or 1 hour
+    turnOnReplyToCarti() #reply to playboi carti when he tweets
+    turnOnReplyKeywordCarti(True) # reply to people who have the word carti in their tweet
