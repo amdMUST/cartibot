@@ -50,3 +50,6 @@ def getLyric(count,filepath):
 
 def cartiTweetStatus(x):
 	api.update_status( x.lower() )
+
+while True:
+	turnOnTweetLyric(1800)
