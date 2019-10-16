@@ -92,4 +92,4 @@ def turnOnReplyToTweets(timer):
             continue
 
 while True:
-    turnOnReplyToTweets(15)
+    turnOnReplyToTweets(300)
