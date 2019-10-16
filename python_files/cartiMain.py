@@ -14,7 +14,6 @@ api = tp.API(auth)
 class MyStreamListener(tp.StreamListener):
     def on_status(self, status ):
         print( status.text )
-#        api.update_status('@' + mention.user.screen_name + ' ' + 'sd', in_reply_to_status_id = 2342 ) 
         print('replied to tweet!')
     
     def on_error(self, status_code):
