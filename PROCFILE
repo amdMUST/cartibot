@@ -1,3 +1,2 @@
-worker: python cartiGetLyric.py
-worker: python replyToCarti.py
-worker: python cartiReply.py
+worker: python cartiGetLyric.py replyToCarti.py cartiReply.py
+
