@@ -30,14 +30,6 @@ class MyStreamListener(tp.StreamListener):
 myStreamListener = MyStreamListener()
 myStream = tp.Stream(auth = api.auth, listener = myStreamListener)
 
-def whoTweetingCarti():
-    print('looking for people who have said carti!')
-    myStream.filter(track=['carti'], is_async=True,filter_level='medium',languages='en')
-
-#def turnOnReplyKeywordCarti(bool):
-#    while bool:
-#        whoTweetingCarti()
-
 
 def sizeOfFile():
     # a method to find number of lines
@@ -61,6 +53,14 @@ def getReply():
                 linpe = str(line) 
                 print(linpe)
                 return linpe
+
+def whoTweetingCarti():
+    print('looking for people who have said carti!')
+    myStream.filter(track=['carti'], is_async=True,filter_level='medium',languages='en')
+
+#def turnOnReplyKeywordCarti(bool):
+#    while bool:
+#        whoTweetingCarti()
 
 while True:
     whoTweetingCarti()
