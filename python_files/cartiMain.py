@@ -2,7 +2,7 @@
 import tweepy as tp # to use the twitter API
 import time # to specify how much time in between tweets
 import os # to move to the cartiPics folder
-from config import consumerKey,consumerSec,accessTok,accessSec
+from config.py import consumerKey,consumerSec,accessTok,accessSec
 
 
 # loging in
