@@ -18,4 +18,4 @@ while True:
     turnOnReplyToTweets(60) # this is going to respond to whenever someone tweets at cartibot, on a 15 sec timer rn
     turnOnTweetLyric(60) # this is parsing carti lyrics from a file and tweeting them out every 30min or 1 hour
     turnOnReplyToCarti(True) #reply to playboi carti when he tweets
-    whoTweetingCarti() # reply to people who have the word carti in their tweet
+    #whoTweetingCarti() # reply to people who have the word carti in their tweet
