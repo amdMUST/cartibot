@@ -40,17 +40,19 @@ def turnOnReplyToCarti(bool):
 
 def sizeOfFile():
     # a method to find number of lines
-	filepath ="TEXT_files\\TXT_replytoCarti.txt"
-	count = 1
-	with open(filepath, encoding="utf8") as f:
-		line = f.readline()		
-		for line in f:
-			count += 1
-	return count
+	#filepath ="TEXT_files\\TXT_replytoCarti.txt" #PC
+    filepath = "TEXT_files/TXT_replytoCarti.txt" #MAC
+    count = 1
+    with open(filepath, encoding="utf8") as f:
+        line = f.readline()		
+        for line in f:
+            count += 1
+    return count
 
 def getReplyforCarti():
     count = random2.randint(0,sizeOfFile())
-    filepath ="TEXT_files\\TXT_replytoCarti.txt"
+    #filepath ="TEXT_files\\TXT_replytoCarti.txt" #PC
+    filepath = "TEXT_files/TXT_replytoCarti.txt" #MAC
     with open(filepath, encoding="utf8") as f:
         line = f.readline(count)
         lineNum = 0		

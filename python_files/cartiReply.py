@@ -19,20 +19,23 @@ for mention in mentions:
 
 
 # this stores the last seen id
-fileName = 'TEXT_files\\TXT_cartiLastSeenID.txt'
+#fileName = 'TEXT_files\\TXT_cartiLastSeenID.txt' #PC
+fileName = 'TEXT_files/TXT_cartiLastSeenID.txt' #MAC
 
 def sizeOfFile():
     # a method to find number of lines
-	filepath ="TEXT_files\\TXT_replytoPPL.txt"
-	count = 1
-	with open(filepath, encoding="utf8") as f:
-		line = f.readline()		
-		for line in f:
-			count += 1
-	return count
+    #filepath ="TEXT_files\\TXT_replytoPPL.txt" #PC
+    filepath = "TEXT_files/TXT_replyToPPL.txt" #MAC
+    count = 1
+    with open(filepath, encoding="utf8") as f:
+        line = f.readline()		
+        for line in f:
+            count += 1
+    return count
 
 def getReply(count):
-    filepath ="TEXT_files\\TXT_replytoPPL.txt"
+    #filepath ="TEXT_files\\TXT_replytoPPL.txt" #PC
+    filepath = "TEXT_files/TXT_replyToPPL.txt" #MAC
     with open(filepath, encoding="utf8") as f:
         line = f.readline(count)
         lineNum = 0		
@@ -87,3 +90,6 @@ def turnOnReplyToTweets(timer):
         if x >= fileSize:
             x = 0
             continue
+
+while True:
+    turnOnReplyToTweets(15)

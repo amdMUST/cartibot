@@ -29,7 +29,8 @@ def turnOnTweetLyric(timer):
 
 def sizeOfFile():
 # a method to find number of lines
-	filepath ="TEXT_files\\TXT_cartiLyrics.txt"
+	#filepath = 'TEXT_files\\TXT_cartiLyrics.txt' #PC
+	filepath = 'TEXT_files/TXT_cartiLyrics.txt' #MAC
 	count = 1
 	with open(filepath, encoding="utf8") as f:
 		line = f.readline()		
@@ -37,7 +38,8 @@ def sizeOfFile():
 			count += 1
 	return count
 
-filepath ="TEXT_files\\TXT_cartiLyrics.txt"
+#filepath = 'TEXT_files\\TXT_cartiLyrics.txt' #PC
+filepath = 'TEXT_files/TXT_cartiLyrics.txt' #MAC
 def getLyric(count,filepath):
 	with open(filepath, encoding="utf8") as f:
 		line = f.readline(count).strip()
@@ -52,4 +54,4 @@ def cartiTweetStatus(x):
 	api.update_status( x.lower() )
 
 while True:
-	turnOnTweetLyric(1800)
+	turnOnTweetLyric(3600)
