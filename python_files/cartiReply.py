@@ -19,8 +19,8 @@ for mention in mentions:
 
 
 # this stores the last seen id
-#fileName = 'TEXT_files\\TXT_cartiLastSeenID.txt' #PC
-fileName = 'TEXT_files/TXT_cartiLastSeenID.txt' #MAC
+fileName = 'TEXT_files\\TXT_cartiLastSeenID.txt' #PC
+#fileName = 'TEXT_files/TXT_cartiLastSeenID.txt' #MAC
 
 def sizeOfFile():
     # a method to find number of lines
@@ -60,6 +60,7 @@ def storeLastSeenId(lastSeenId,fileName):
 
 def replyToTweets(counter):
 # this reverses the order at which it responds to tweets so it responds to early tweets first
+    fileName = 'TEXT_files\\TXT_cartiLastSeenID.txt' #PC
     print('looking for any replies so that i can retrieve and respond rn bro')
     lastSeenId = retrieveLastSeenId(fileName)
     mentions = api.mentions_timeline(lastSeenId,tweet_mode='extended')
