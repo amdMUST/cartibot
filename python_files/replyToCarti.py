@@ -10,7 +10,7 @@ class MyStreamListener(tp.StreamListener):
         print( status.text )
         statusID = status.id
         statusAt = status.user
-        if '@thetrapghandi' in status.text: #@playboicarti
+        if '@playboicarti' in status.text: #@playboicarti
             print('this a double, not tweeting at him!')
             turnOnReplyToCarti(False)
             return
@@ -30,7 +30,7 @@ myStream = tp.Stream(auth = api.auth, listener = myStreamListener)
 
 def replyToCarti():
     print('waiting for the god himself, carti, to tweet!')
-    myStream.filter(follow=["4318546215"]) # 4318546215 is test filter "101263750" is carti
+    myStream.filter(follow=["101263750"]) # 4318546215 is test filter "101263750" is carti
 
 def turnOnReplyToCarti(bool):
     while bool:
