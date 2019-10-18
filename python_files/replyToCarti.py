@@ -38,7 +38,7 @@ def turnOnReplyToCarti(bool):
         print('replied! now gonna take 30 sec break!')
         time.sleep(30)
 
-def sizeOfFile():
+def sizeOfFile(filepath):
     # a method to find number of lines
 	#filepath ="TEXT_files\\TXT_replytoCarti.txt" #PC
     filepath = "TEXT_files/TXT_replytoCarti.txt" #MAC
@@ -50,9 +50,9 @@ def sizeOfFile():
     return count
 
 def getReplyforCarti():
-    count = random2.randint(0,sizeOfFile())
     #filepath ="TEXT_files\\TXT_replytoCarti.txt" #PC
     filepath = "TEXT_files/TXT_replytoCarti.txt" #MAC
+    count = random2.randint(0,sizeOfFile(filepath))
     with open(filepath, encoding="utf8") as f:
         line = f.readline(count)
         lineNum = 0		
