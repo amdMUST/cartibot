@@ -1,0 +1,81 @@
+for mention in mentions:
+    print( str(mention.id) + ' - ' + mention.text)
+    print('gonna respond soon!')
+
+def checkMentions(api, since_id,counter):
+    new_since_id = since_id
+    for tweet in tp.Cursor(mentions,since_id=since_id).items():
+        new_since_id = max(tweet.id,new_since_id)
+        if tweet.in_reply_to_status_id is not None:
+            continue
+        else:
+            api.update_status('@' + mention.user.screen_name + ' ' + getReply(counter), in_reply_to_status_id = tweet.id)
+            tweet.favorite()
+            print('replied to tweet!')
+            counter += 1
+    return new_since_id
+
+def turnOnMentions(timer):
+    since_id = 1
+    fileSize = sizeOfFile()
+    x = random2.randint(0,fileSize)
+    while x < fileSize:
+        x = random2.randint(0,fileSize)
+        since_id = checkMentions(api,since_id,x)
+        time.sleep(timer)
+        print('tick')
+        if x >= fileSize:
+            x = 0
+            continue
+
+
+
+
+def retrieveLastSeenId(fileName):
+    fRead = open(fileName,'r')
+    lastSeenId = int(fRead.read().strip())
+    fRead.close()
+    return lastSeenId
+
+def storeLastSeenId(lastSeenId,fileName):
+    fWrite = open(fileName,'w')
+    fWrite.write(str(lastSeenId))
+    fWrite.close()
+    return
+
+def replyToTweets(counter):
+# this reverses the order at which it responds to tweets so it responds to early tweets first
+    fileName = 'TEXT_files/TXT_cartiLastSeenID.txt' #MAC
+    print('looking for any replies so that i can retrieve and respond rn bro')
+    lastSeenId = retrieveLastSeenId(fileName)
+    mentions = api.mentions_timeline(lastSeenId,tweet_mode='extended')
+    for mention in reversed(mentions):
+        print(str(mention.id) + ' - ' + mention.full_text)
+        lastSeenId = mention.id
+        storeLastSeenId(lastSeenId,fileName)
+        if 'slime' in mention.full_text.lower():
+            print('spinning the wheel for response!')
+            api.update_status('@' + mention.user.screen_name + ' ' + getReply(counter), in_reply_to_status_id = lastSeenId)
+            print('replied to tweet!')
+            counter += 1
+        else:
+            print('spinning the wheel for response!')
+            api.update_status('@' + mention.user.screen_name + ' ' + getReply(counter), in_reply_to_status_id = lastSeenId)
+            print('replied to tweet!')
+            counter += 1
+
+# this is going to respond to whenever someone tweets at cartibot, on a 15 sec timer rn
+def turnOnReplyToTweets(timer):
+    fileSize = sizeOfFile()
+    x = random2.randint(0,fileSize)
+    while x < fileSize:
+        x = random2.randint(0,fileSize)
+        replyToTweets(x)
+        time.sleep(timer)
+        print('tick')
+        if x >= fileSize:
+            x = 0
+            continue
+
+while True:
+    turnOnReplyToTweets(300)
