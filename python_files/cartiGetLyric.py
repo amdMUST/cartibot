@@ -3,29 +3,28 @@
 import os
 import time
 import random2
+import schedule
 import tweepy as tp
 from cartiMain import api
 
+# 1 minute 60
+# 30 minutes 1800
+# 1 hour 3600
+#time.sleep(timer)
 
-def turnOnTweetLyric(timer):
+def turnOnTweetLyric():
 	print('turned on, gonna tweet lyric soon!')
 	fileSize = sizeOfFile()
 	x = random2.randint(0,fileSize)
-	while x < fileSize:
+	if (x < fileSize):
 		x = random2.randint(0,fileSize)
 		print('tick')
 		cartiTweetStatus( getLyric(x,filepath) )
 		print('tweeted lyric!')
-
-		# 1 minute 60
-		# 30 minutes 1800
-		# 1 hour 3600
-		time.sleep(timer)
 		
-		if x >= fileSize:
-			x = 0
-			print('went past the total amount of lines, gonna reset to 0 !')
-			continue
+	elif (x >= fileSize):
+		x = 0
+		print('went past the total amount of lines, gonna reset to 0 !')
 
 def sizeOfFile():
 # a method to find number of lines
@@ -53,5 +52,14 @@ def getLyric(count,filepath):
 def cartiTweetStatus(x):
 	api.update_status( x.lower() )
 
+
+schedule.every().day.at("05:00").do(turnOnTweetLyric)
+schedule.every().day.at("11:00").do(turnOnTweetLyric)
+schedule.every().day.at("16:00").do(turnOnTweetLyric)
+schedule.every().day.at("21:00").do(turnOnTweetLyric)
+
 while True:
-	turnOnTweetLyric(3600)
+	#turnOnTweetLyric()
+	#scheduleTweets()
+	schedule.run_pending()
+	time.sleep(1)
