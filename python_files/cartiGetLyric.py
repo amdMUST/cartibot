@@ -53,10 +53,10 @@ def cartiTweetStatus(x):
 	api.update_status( x.lower() )
 
 
-schedule.every().day.at("05:00").do(turnOnTweetLyric)
-schedule.every().day.at("11:00").do(turnOnTweetLyric)
+schedule.every().day.at("07:00").do(turnOnTweetLyric)
+schedule.every().day.at("12:00").do(turnOnTweetLyric)
 schedule.every().day.at("16:00").do(turnOnTweetLyric)
-schedule.every().day.at("21:00").do(turnOnTweetLyric)
+schedule.every().day.at("22:00").do(turnOnTweetLyric)
 
 while True:
 	#turnOnTweetLyric()
