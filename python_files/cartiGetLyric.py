@@ -54,9 +54,9 @@ def cartiTweetStatus(x):
 
 
 schedule.every().day.at("07:00").do(turnOnTweetLyric)
-schedule.every().day.at("12:00").do(turnOnTweetLyric)
+schedule.every().day.at("13:00").do(turnOnTweetLyric)
 schedule.every().day.at("16:00").do(turnOnTweetLyric)
-schedule.every().day.at("22:00").do(turnOnTweetLyric)
+schedule.every().day.at("19:00").do(turnOnTweetLyric)
 
 while True:
 	#turnOnTweetLyric()
