@@ -52,11 +52,11 @@ def getLyric(count,filepath):
 def cartiTweetStatus(x):
 	api.update_status( x.lower() )
 
-
-schedule.every().day.at("07:00").do(turnOnTweetLyric)
-schedule.every().day.at("13:00").do(turnOnTweetLyric)
-schedule.every().day.at("16:00").do(turnOnTweetLyric)
-schedule.every().day.at("19:00").do(turnOnTweetLyric)
+# uk time its in, i want everyday at 10am-3pm, 1pm-6pm, 5pm-10pm 9pm-2am +++ 
+schedule.every().day.at("15:00").do(turnOnTweetLyric) # 10am --> 3pm
+schedule.every().day.at("18:00").do(turnOnTweetLyric) # 1pm --> 6pm
+schedule.every().day.at("22:00").do(turnOnTweetLyric) # 5pm --> 10pm
+schedule.every().day.at("02:00").do(turnOnTweetLyric) # 9pm --> 2am
 
 while True:
 	#turnOnTweetLyric()
