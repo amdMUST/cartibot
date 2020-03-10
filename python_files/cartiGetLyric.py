@@ -56,7 +56,7 @@ def cartiTweetStatus(x):
 
 #schedule.every().day.at("05:00").do(turnOnTweetLyric) #10am
 #schedule.every().day.at("11:00").do(turnOnTweetLyric) #1pm
-schedule.every().day.at("21:20").do(turnOnTweetLyric) #4:20pm not in march gain 1 hour
+#schedule.every().day.at("21:20").do(turnOnTweetLyric) #4:20pm not in march gain 1 hour
 schedule.every().day.at("20:20").do(turnOnTweetLyric) #4:20pm in march lose 1 hour
 #schedule.every().day.at("16:00").do(turnOnTweetLyric) #5pm
 #schedule.every().day.at("21:00").do(turnOnTweetLyric) #9pm
