@@ -1,11 +1,12 @@
-# cartibot
-https://twitter.com/cartibotslatt
+# CARTIBOT
+### Python Twitter-Bot | Sept. 2019 - Oct. 2019
 
-a playboi carti twitter bot
+a Twitter-Bot for the rapper PlayBoi Carti
 
 This bot will tweet lyrics from Playboi Carti songs. It will also respond if anyone @'s him with a response from a text file.
-It will also wait for Playboi Carti to tweet and reply as soon as he tweets, and be able to respond to anyone tweeting with the keyword 'carti', but currently, i dont want to pay loads of money to the server host to enable those features, but hey it still works fine, and if you dont believe me you can check the code!
+It will also wait for Playboi Carti to tweet and reply as soon as he tweets, and be able to respond to anyone tweeting with the keyword 'carti', but currently, I dont want to pay loads of money to the server host to enable those features, but functionally will work. 
 
-Thanks for looking at my code
+The account currently tweets once a day at 4:20pm. With over 100 responses available and 1000+ lyrics to tweet out, this bot will never stop talking!
 
--Ahmed
+###
+### The Twitter Account: https://twitter.com/cartibotslatt
